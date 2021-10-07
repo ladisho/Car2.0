@@ -1,6 +1,7 @@
 package org.wit.car.console.controllers
 
 import mu.KotlinLogging
+import org.wit.car.console.main.controller
 import org.wit.car.console.models.CarMemStore
 import org.wit.car.console.models.CarModel
 import org.wit.car.console.views.CarView
@@ -11,6 +12,26 @@ class CarController {
     val cars = CarMemStore()
     val carView = CarView()
     private val logger = KotlinLogging.logger {}
+
+    fun start() {
+        init()
+
+        var input: Int
+
+        do {
+            input = menu()
+            when(input) {
+                1 -> add()
+                2 -> update()
+                3 -> list()
+                4 -> search()
+                -1 -> println("Exiting App")
+                else -> println("Invalid Option")
+            }
+            println()
+        } while (input != -1)
+        logger.info { "Shutting Down Car Console App" }
+    }
 
     fun init() {
         logger.info { "Launching Car Console App" }
