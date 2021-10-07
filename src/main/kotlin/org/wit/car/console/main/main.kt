@@ -1,6 +1,7 @@
 package org.wit.car.console.main
 
 import mu.KotlinLogging
+import org.wit.car.console.models.CarMemStore
 import org.wit.car.console.models.CarModel
 
 private val logger = KotlinLogging.logger {}
@@ -12,7 +13,7 @@ private val logger = KotlinLogging.logger {}
 
 //var car = CarModel()
 
-val cars = ArrayList<CarModel>()
+val cars = CarMemStore()
 
 fun main(args: Array<String>){
     logger.info { "Launching Car Console App" }
@@ -72,8 +73,8 @@ fun addCar(){
     print("Enter the PlateNumber : ")
     aCar.plateNumber = readLine()!!
     if ( aCar.brand.isNotEmpty() && aCar.model.isNotEmpty() && aCar.plateNumber.isNotEmpty() && aCar.year.isNotEmpty()  ){
-        aCar.id = cars.size.toLong()
-        cars.add(aCar.copy())
+        aCar.id = cars.findAll().size.toLong()
+        cars.create(aCar.copy())
 //        aCar.id++
         logger.info("Car Added : [ $aCar ]")
 //        println()
@@ -117,7 +118,7 @@ fun getId() : Long {
 }
 
 fun search(id: Long) : CarModel? {
-    val foundCar: CarModel? = cars.find { p -> p.id == id }
+    val foundCar: CarModel? = cars.findOne(id)
     return foundCar
 }
 
