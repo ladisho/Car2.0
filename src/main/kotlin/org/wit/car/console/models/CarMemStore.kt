@@ -24,8 +24,12 @@ class CarMemStore : CarStore {
 
     override fun create(car: CarModel) {
         car.id = getId()
+        if (car.year == ""){
+            car.year = "1900"
+        }
         cars.add(car)
         logAll()
+
     }
 
     override fun update(car: CarModel) {
