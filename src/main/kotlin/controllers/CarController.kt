@@ -1,15 +1,15 @@
 package org.wit.car.console.controllers
 
 import mu.KotlinLogging
-import org.wit.car.console.main.controller
-import org.wit.car.console.models.CarMemStore
+import org.wit.car.console.models.CarJSONStore
 import org.wit.car.console.models.CarModel
 import org.wit.car.console.views.CarView
 
 class CarController {
 
 
-    val cars = CarMemStore()
+//    val cars = CarMemStore()
+    val cars = CarJSONStore()
     val carView = CarView()
     private val logger = KotlinLogging.logger {}
 

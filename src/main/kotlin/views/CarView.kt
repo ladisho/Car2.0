@@ -2,6 +2,7 @@ package org.wit.car.console.views
 
 //import org.wit.car.console.main.carView
 //import org.wit.car.console.main.cars
+import org.wit.car.console.models.CarJSONStore
 import org.wit.car.console.models.CarMemStore
 import org.wit.car.console.models.CarModel
 
@@ -28,7 +29,7 @@ class CarView {
         return option
     }
 
-    fun listCars(cars : CarMemStore) {
+    fun listCars(cars: CarJSONStore) {
         println("List All Cars")
         println()
         cars.logAll()
