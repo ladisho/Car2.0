@@ -1,0 +1,16 @@
+[
+  {
+    "id": 7982664036465844149,
+    "model": "fgh",
+    "brand": "toyota",
+    "year": "2009",
+    "plateNumber": "fgh456"
+  },
+  {
+    "id": -2046873084397795495,
+    "model": "jkl",
+    "brand": "mazda",
+    "year": "2010",
+    "plateNumber": "jkl789"
+  }
+]
