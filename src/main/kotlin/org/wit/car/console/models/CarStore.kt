@@ -6,4 +6,5 @@ interface CarStore {
     fun findOne(id: Long): CarModel?
     fun create(car: CarModel)
     fun update(car: CarModel)
+    fun delete(car: CarModel)
 }

@@ -46,4 +46,8 @@ class CarMemStore : CarStore {
     internal fun logAll() {
         cars.forEach { logger.info("${it}") }
     }
+
+    override fun delete(car: CarModel) {
+        cars.remove(car)
+    }
 }

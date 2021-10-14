@@ -25,6 +25,7 @@ class CarController {
                 2 -> update()
                 3 -> list()
                 4 -> search()
+                5 -> delete()
                 -1 -> println("Exiting App")
                 else -> println("Invalid Option")
             }
@@ -80,5 +81,19 @@ class CarController {
         val aCar = search(carView.getId())!!
         carView.showCar(aCar)
 
+    }
+
+    fun delete() {
+        carView.listCars(cars)
+        var searchId = carView.getId()
+        val aCar = search(searchId)
+
+        if(aCar != null) {
+            cars.delete(aCar)
+            println("Car Deleted...")
+            carView.listCars(cars)
+        }
+        else
+            println("Car Not Deleted...")
     }
 }

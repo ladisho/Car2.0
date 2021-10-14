@@ -18,6 +18,7 @@ class CarView {
         println(" 2. Update Car")
         println(" 3. List All Cars")
         println(" 4. Search Cars")
+        println(" 5. Delete Car")
         println("-1. Exit")
         println()
         print("Enter Option : ")

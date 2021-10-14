@@ -67,5 +67,10 @@ class CarJSONStore : CarStore {
         val jsonString = read(JSON_FILE)
         cars = Gson().fromJson(jsonString, listType)
     }
+
+    override fun delete(car: CarModel) {
+        cars.remove(car)
+        serialize()
+    }
 }
 
