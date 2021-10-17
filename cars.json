@@ -12,5 +12,12 @@
     "brand": "mazda",
     "year": "2010",
     "plateNumber": "jkl789"
+  },
+  {
+    "id": -6264933501861876042,
+    "model": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: jkl]",
+    "brand": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: mazda]",
+    "year": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: 2010]",
+    "plateNumber": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: jkl789]"
   }
 ]
