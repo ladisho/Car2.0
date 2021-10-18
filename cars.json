@@ -19,5 +19,19 @@
     "brand": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: mazda]",
     "year": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: 2010]",
     "plateNumber": "StringProperty [bean: tornadofx.ViewModel@7a1de502, value: jkl789]"
+  },
+  {
+    "id": -5956058629593320733,
+    "model": "sd",
+    "brand": "sdf",
+    "year": "StringProperty [bean: tornadofx.ViewModel@2b60ae6b, value: fbg]",
+    "plateNumber": "StringProperty [bean: tornadofx.ViewModel@2b60ae6b, value: gtgg]"
+  },
+  {
+    "id": 7797282771702219369,
+    "model": "mcvk",
+    "brand": "dvcmfv",
+    "year": "dmvfv",
+    "plateNumber": "vkfv f"
   }
 ]

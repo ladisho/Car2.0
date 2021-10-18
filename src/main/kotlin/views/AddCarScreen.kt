@@ -1,5 +1,7 @@
 package org.wit.placemark.console.views
 
+import tornadofx.getValue
+import tornadofx.setValue
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Orientation
 import org.wit.placemark.console.controllers.CarUIController
@@ -36,7 +38,7 @@ class AddCarScreen : View("Add Car") {
                 useMaxWidth = true
                 action {
                     runAsyncWithProgress {
-                        carUIController.add(_model.toString(),_brand.toString(),_year.toString(),_plateNumber.toString())
+                        carUIController.add(_model.value,_brand.value,_year.value,_plateNumber.value)
 
                     }
                 }
