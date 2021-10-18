@@ -26,6 +26,7 @@ class CarController {
                 3 -> list()
                 4 -> search()
                 5 -> delete()
+                6 -> searchbyYear()
                 -1 -> println("Exiting App")
                 else -> println("Invalid Option")
             }
@@ -81,6 +82,15 @@ class CarController {
         val aCar = search(carView.getId())!!
         carView.showCar(aCar)
 
+    }
+
+    fun searchbyYear(){
+        cars.listdistinct()
+        println()
+        println("Enter a year :")
+        var y = readLine()!!
+        println()
+        println(cars.findbyYear(y))
     }
 
     fun delete() {

@@ -32,6 +32,20 @@ class CarJSONStore : CarStore {
         return cars
     }
 
+    fun listdistinct(){
+        var list : List<CarModel> = cars.distinctBy { c -> c.year }
+        println("list of cars by yr")
+        println()
+        println(list)
+    }
+
+
+
+    fun findbyYear(year: String) : List<CarModel> {
+        var foundCars: List<CarModel> = cars.filter { c -> c.year.equals(year) }
+        return foundCars
+    }
+
     override fun findOne(id: Long) : CarModel? {
         var foundCar: CarModel? = cars.find { c -> c.id == id }
         return foundCar
