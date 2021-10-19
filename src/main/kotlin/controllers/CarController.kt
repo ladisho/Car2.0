@@ -27,6 +27,7 @@ class CarController {
                 4 -> search()
                 5 -> delete()
                 6 -> searchbyYear()
+                7 -> searchbyMultiple()
                 -1 -> println("Exiting App")
                 else -> println("Invalid Option")
             }
@@ -87,11 +88,24 @@ class CarController {
     fun searchbyYear(){
         cars.listdistinct()
         println()
-        println("Enter a year :")
+        print("Enter a year : ")
         var y = readLine()!!
         println()
         println(cars.findbyYear(y))
     }
+
+    fun searchbyMultiple(){
+
+        print("Enter a model : ")
+        var m = readLine()!!
+        print("Enter a brand : ")
+        var b = readLine()!!
+        print("Enter a year : ")
+        var y = readLine()!!
+        println()
+        println(cars.findbyMultiple(m,b,y))
+    }
+
 
     fun delete() {
         carView.listCars(cars)

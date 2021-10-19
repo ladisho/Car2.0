@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 import mu.KotlinLogging
 
 import org.wit.placemark.console.helpers.*
+import tornadofx.DefaultErrorHandler.Companion.filter
 import java.util.*
 
 private val logger = KotlinLogging.logger {}
@@ -43,6 +44,11 @@ class CarJSONStore : CarStore {
 
     fun findbyYear(year: String) : List<CarModel> {
         var foundCars: List<CarModel> = cars.filter { c -> c.year.equals(year) }
+        return foundCars
+    }
+
+    fun findbyMultiple(model: String, brand: String, year: String) : List<CarModel> {
+        var foundCars: List<CarModel> = cars.filter {  c -> (c.model.equals(model)&&c.brand.equals(brand)&&c.year.equals(year)) }
         return foundCars
     }
 
