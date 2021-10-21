@@ -59,7 +59,7 @@ class CarJSONStoreTest {
         var car = CarModel(0, "uio", "venza", "2010", "uio890")
         cars.create(car)
         cars.delete(car)
-        cars.findOne(car.id)
+        assertNull(cars.findOne(car.id))
     }
 
 }
