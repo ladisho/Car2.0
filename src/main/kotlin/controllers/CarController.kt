@@ -16,7 +16,7 @@ class CarController {
     val ANSI_CYAN = "\u001B[36m"
     val ANSI_WHITE = "\u001B[37m"
 
-//    val cars = CarMemStore()
+    //    val cars = CarMemStore()
     val cars = CarJSONStore()
     val carView = CarView()
     private val logger = KotlinLogging.logger {}
@@ -29,7 +29,7 @@ class CarController {
         do {
             println(ANSI_BLUE)
             input = menu()
-            when(input) {
+            when (input) {
                 1 -> add()
                 2 -> update()
                 3 -> list()
@@ -37,8 +37,8 @@ class CarController {
                 5 -> delete()
                 6 -> searchbyYear()
                 7 -> searchbyMultiple()
-                -1 -> println(ANSI_GREEN+ "Exiting App")
-                else -> println(ANSI_YELLOW+"Invalid Option")
+                -1 -> println(ANSI_GREEN + "Exiting App")
+                else -> println(ANSI_YELLOW + "Invalid Option")
             }
             println()
         } while (input != -1)
@@ -47,12 +47,14 @@ class CarController {
 
     fun init() {
         logger.info { "Launching Car Console App" }
-        println(ANSI_BLUE+"Car Kotlin App ")
+        println(ANSI_BLUE + "Car Kotlin App ")
     }
 
-    fun menu() :Int { return carView.menu() }
+    fun menu(): Int {
+        return carView.menu()
+    }
 
-    fun add(){
+    fun add() {
         val aCar = CarModel()
 
         if (carView.addCarData(aCar))
@@ -70,49 +72,47 @@ class CarController {
         var searchId = carView.getId()
         val aCar = search(searchId)
 
-        if(aCar != null) {
-            if(carView.updateCarData(aCar)) {
+        if (aCar != null) {
+            if (carView.updateCarData(aCar)) {
                 cars.update(aCar)
                 carView.showCar(aCar)
                 logger.info("Car Updated : [ $aCar ]")
-            }
-            else
+            } else
                 logger.info("Car Not Updated")
-        }
-        else
-            println(ANSI_PURPLE+"Car Not Updated...")
+        } else
+            println(ANSI_PURPLE + "Car Not Updated...")
     }
 
-    fun search(id: Long) : CarModel? {
+    fun search(id: Long): CarModel? {
         val foundCar = cars.findOne(id)
         return foundCar
     }
 
-    fun search(){
+    fun search() {
         val aCar = search(carView.getId())!!
         carView.showCar(aCar)
 
     }
 
-    fun searchbyYear(){
+    fun searchbyYear() {
         cars.listdistinct()
         println()
-        print(ANSI_CYAN+"Enter a year : ")
+        print(ANSI_CYAN + "Enter a year : ")
         var y = readLine()!!
         println()
         println(cars.findbyYear(y))
     }
 
-    fun searchbyMultiple(){
+    fun searchbyMultiple() {
 
-        print(ANSI_WHITE+"Enter a model : ")
+        print(ANSI_WHITE + "Enter a model : ")
         var m = readLine()!!
-        print(ANSI_RED+"Enter a brand : ")
+        print(ANSI_RED + "Enter a brand : ")
         var b = readLine()!!
-        print(ANSI_GREEN+"Enter a year : ")
+        print(ANSI_GREEN + "Enter a year : ")
         var y = readLine()!!
         println()
-        println(cars.findbyMultiple(m,b,y))
+        println(cars.findbyMultiple(m, b, y))
     }
 
 
@@ -121,13 +121,12 @@ class CarController {
         var searchId = carView.getId()
         val aCar = search(searchId)
 
-        if(aCar != null) {
+        if (aCar != null) {
             cars.delete(aCar)
-            println(ANSI_YELLOW+"Car Deleted...")
+            println(ANSI_YELLOW + "Car Deleted...")
             carView.listCars(cars)
-        }
-        else
-            println(ANSI_BLUE+"Car Not Deleted...")
+        } else
+            println(ANSI_BLUE + "Car Not Deleted...")
     }
-    fun format(vararg args: Any?) {}
+
 }

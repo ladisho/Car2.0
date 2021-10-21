@@ -38,7 +38,7 @@ class AddCarScreen : View("Add Car") {
                 useMaxWidth = true
                 action {
                     runAsyncWithProgress {
-                        carUIController.add(_model.value,_brand.value,_year.value,_plateNumber.value)
+                        carUIController.add(_model.value, _brand.value, _year.value, _plateNumber.value)
 
                     }
                 }

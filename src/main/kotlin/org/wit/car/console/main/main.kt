@@ -8,8 +8,8 @@ private val logger = KotlinLogging.logger {}
 val controller = CarController()
 
 
-fun main(args: Array<String>){
-   controller.start()
+fun main(args: Array<String>) {
+    controller.start()
 }
 
 

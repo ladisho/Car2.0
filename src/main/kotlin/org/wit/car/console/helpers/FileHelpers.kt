@@ -5,7 +5,7 @@ import java.io.*
 
 val logger = KotlinLogging.logger {}
 
-fun write( fileName: String, data: String) {
+fun write(fileName: String, data: String) {
 
     val file = File(fileName)
     try {

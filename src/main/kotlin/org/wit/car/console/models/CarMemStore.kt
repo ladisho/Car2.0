@@ -17,14 +17,14 @@ class CarMemStore : CarStore {
         return cars
     }
 
-    override fun findOne(id: Long) : CarModel? {
+    override fun findOne(id: Long): CarModel? {
         var foundCar: CarModel? = cars.find { c -> c.id == id }
         return foundCar
     }
 
     override fun create(car: CarModel) {
         car.id = getId()
-        if (car.year == ""){
+        if (car.year == "") {
             car.year = "1900"
         }
         cars.add(car)

@@ -33,26 +33,26 @@ class CarJSONStore : CarStore {
         return cars
     }
 
-    fun listdistinct(){
-        var list : List<CarModel> = cars.distinctBy { c -> c.year }
+    fun listdistinct() {
+        var list: List<CarModel> = cars.distinctBy { c -> c.year }
         println("list of cars by yr")
         println()
         println(list)
     }
 
 
-
-    fun findbyYear(year: String) : List<CarModel> {
+    fun findbyYear(year: String): List<CarModel> {
         var foundCars: List<CarModel> = cars.filter { c -> c.year.equals(year) }
         return foundCars
     }
 
-    fun findbyMultiple(model: String, brand: String, year: String) : List<CarModel> {
-        var foundCars: List<CarModel> = cars.filter {  c -> (c.model.equals(model)&&c.brand.equals(brand)&&c.year.equals(year)) }
+    fun findbyMultiple(model: String, brand: String, year: String): List<CarModel> {
+        var foundCars: List<CarModel> =
+            cars.filter { c -> (c.model.equals(model) && c.brand.equals(brand) && c.year.equals(year)) }
         return foundCars
     }
 
-    override fun findOne(id: Long) : CarModel? {
+    override fun findOne(id: Long): CarModel? {
         var foundCar: CarModel? = cars.find { c -> c.id == id }
         return foundCar
     }
@@ -86,7 +86,7 @@ class CarJSONStore : CarStore {
     private fun deserialize() {
         val jsonString = read(JSON_FILE)
         cars = Gson().fromJson(jsonString, listType)
-        if (cars.size == 0){
+        if (cars.size == 0) {
             dummyData()
         }
     }
@@ -96,10 +96,10 @@ class CarJSONStore : CarStore {
         serialize()
     }
 
-    fun dummyData(){
-        cars.add(CarModel(0,"123","audi","2000","audi123"))
-        cars.add(CarModel(1,"123","audi","2000","audi123"))
-        cars.add(CarModel(2,"123","audi","2000","audi123"))
+    fun dummyData() {
+        cars.add(CarModel(0, "123", "audi", "2000", "audi123"))
+        cars.add(CarModel(1, "123", "audi", "2000", "audi123"))
+        cars.add(CarModel(2, "123", "audi", "2000", "audi123"))
 
     }
 }

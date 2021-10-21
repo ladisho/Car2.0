@@ -16,11 +16,12 @@ class CarUIController : Controller() {
     init {
         logger.info { "Launching Car TornadoFX UI App" }
     }
-    fun add(_model : String, _brand : String, _year : String, _plateNumber : String){
+
+    fun add(_model: String, _brand: String, _year: String, _plateNumber: String) {
 
         var aCar = CarModel(model = _model, brand = _brand, year = _year, plateNumber = _plateNumber)
-            cars.create(aCar)
-            logger.info("Car Added")
+        cars.create(aCar)
+        logger.info("Car Added")
     }
 
     fun loadListScreen() {
@@ -41,6 +42,7 @@ class CarUIController : Controller() {
             find(AddCarScreen::class).replaceWith(MenuScreen::class, sizeToScene = true, centerOnScreen = true)
         }
     }
+
     fun closeList() {
         runLater {
             find(ListCarScreen::class).replaceWith(MenuScreen::class, sizeToScene = true, centerOnScreen = true)

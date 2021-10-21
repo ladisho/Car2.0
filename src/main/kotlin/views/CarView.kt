@@ -8,9 +8,9 @@ import org.wit.car.console.models.CarModel
 
 class CarView {
 
-    fun menu() : Int {
+    fun menu(): Int {
 
-        var option : Int
+        var option: Int
         var input: String?
 
         println("MAIN MENU")
@@ -39,14 +39,14 @@ class CarView {
         println()
     }
 
-    fun showCar(car : CarModel) {
-        if(car != null)
+    fun showCar(car: CarModel) {
+        if (car != null)
             println("Car Details [ $car ]")
         else
             println("Car Not Found...")
     }
 
-    fun addCarData(car : CarModel) : Boolean {
+    fun addCarData(car: CarModel): Boolean {
 
         println()
         print("Enter the Model : ")
@@ -61,7 +61,7 @@ class CarView {
         return car.model.isNotEmpty() && car.brand.isNotEmpty() && car.year.isNotEmpty() && car.plateNumber.isNotEmpty()
     }
 
-    fun updateCarData(car : CarModel) : Boolean {
+    fun updateCarData(car: CarModel): Boolean {
 
         var tempModel: String?
         var tempBrand: String?
@@ -89,9 +89,9 @@ class CarView {
         return false
     }
 
-    fun getId() : Long {
-        var strId : String? // String to hold user input
-        var searchId : Long // Long to hold converted id
+    fun getId(): Long {
+        var strId: String? // String to hold user input
+        var searchId: Long // Long to hold converted id
         print("Enter id to Search/Update : ")
         strId = readLine()!!
         searchId = if (strId.toLongOrNull() != null && !strId.isEmpty())
