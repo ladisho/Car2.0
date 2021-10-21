@@ -6,15 +6,15 @@ import org.wit.car.console.models.CarModel
 import org.wit.car.console.views.CarView
 
 class CarController {
-//    val ANSI_RESET = "\u001B[0m"
-//    val ANSI_BLACK = "\u001B[30m"
-//    val ANSI_RED = "\u001B[31m"
-//    val ANSI_GREEN = "\u001B[32m"
-//    val ANSI_YELLOW = "\u001B[33m"
-//    val ANSI_BLUE = "\u001B[34m"
-//    val ANSI_PURPLE = "\u001B[35m"
-//    val ANSI_CYAN = "\u001B[36m"
-//    val ANSI_WHITE = "\u001B[37m"
+    val ANSI_RESET = "\u001B[0m"
+    val ANSI_BLACK = "\u001B[30m"
+    val ANSI_RED = "\u001B[31m"
+    val ANSI_GREEN = "\u001B[32m"
+    val ANSI_YELLOW = "\u001B[33m"
+    val ANSI_BLUE = "\u001B[34m"
+    val ANSI_PURPLE = "\u001B[35m"
+    val ANSI_CYAN = "\u001B[36m"
+    val ANSI_WHITE = "\u001B[37m"
 
 //    val cars = CarMemStore()
     val cars = CarJSONStore()
@@ -27,6 +27,7 @@ class CarController {
         var input: Int
 
         do {
+            println(ANSI_BLUE)
             input = menu()
             when(input) {
                 1 -> add()
@@ -36,8 +37,8 @@ class CarController {
                 5 -> delete()
                 6 -> searchbyYear()
                 7 -> searchbyMultiple()
-                -1 -> println("Exiting App")
-                else -> println("Invalid Option")
+                -1 -> println(ANSI_GREEN+ "Exiting App")
+                else -> println(ANSI_YELLOW+"Invalid Option")
             }
             println()
         } while (input != -1)
@@ -46,7 +47,7 @@ class CarController {
 
     fun init() {
         logger.info { "Launching Car Console App" }
-        println("Car Kotlin App ")
+        println(ANSI_BLUE+"Car Kotlin App ")
     }
 
     fun menu() :Int { return carView.menu() }
@@ -79,7 +80,7 @@ class CarController {
                 logger.info("Car Not Updated")
         }
         else
-            println("Car Not Updated...")
+            println(ANSI_PURPLE+"Car Not Updated...")
     }
 
     fun search(id: Long) : CarModel? {
@@ -96,7 +97,7 @@ class CarController {
     fun searchbyYear(){
         cars.listdistinct()
         println()
-        print("Enter a year : ")
+        print(ANSI_CYAN+"Enter a year : ")
         var y = readLine()!!
         println()
         println(cars.findbyYear(y))
@@ -104,11 +105,11 @@ class CarController {
 
     fun searchbyMultiple(){
 
-        print("Enter a model : ")
+        print(ANSI_WHITE+"Enter a model : ")
         var m = readLine()!!
-        print("Enter a brand : ")
+        print(ANSI_RED+"Enter a brand : ")
         var b = readLine()!!
-        print("Enter a year : ")
+        print(ANSI_GREEN+"Enter a year : ")
         var y = readLine()!!
         println()
         println(cars.findbyMultiple(m,b,y))
@@ -122,10 +123,11 @@ class CarController {
 
         if(aCar != null) {
             cars.delete(aCar)
-            println("Car Deleted...")
+            println(ANSI_YELLOW+"Car Deleted...")
             carView.listCars(cars)
         }
         else
-            println("Car Not Deleted...")
+            println(ANSI_BLUE+"Car Not Deleted...")
     }
+    fun format(vararg args: Any?) {}
 }

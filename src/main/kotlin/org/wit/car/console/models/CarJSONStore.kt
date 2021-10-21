@@ -11,7 +11,7 @@ import java.util.*
 
 private val logger = KotlinLogging.logger {}
 
-val JSON_FILE = "cars1.json"
+val JSON_FILE = "cars.json"
 val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
 val listType = object : TypeToken<java.util.ArrayList<CarModel>>() {}.type
 
