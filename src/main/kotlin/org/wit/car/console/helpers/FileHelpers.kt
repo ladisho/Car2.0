@@ -2,7 +2,6 @@ package org.wit.placemark.console.helpers
 
 import mu.KotlinLogging
 import java.io.*
-
 val logger = KotlinLogging.logger {}
 
 fun write(fileName: String, data: String) {

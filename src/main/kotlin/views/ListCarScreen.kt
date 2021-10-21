@@ -1,14 +1,8 @@
 package org.wit.placemark.console.views
 
-
-import javafx.beans.property.SimpleObjectProperty
-import javafx.collections.FXCollections
-import javafx.scene.control.TableView
-import javafx.scene.layout.GridPane
 import org.wit.car.console.models.CarModel
 import org.wit.placemark.console.controllers.CarUIController
-//import org.wit.placemark.console.controllers.PlacemarkUIController
-//import org.wit.placemark.console.models.PlacemarkModel
+
 import tornadofx.*
 
 class ListCarScreen : View("List Cars") {

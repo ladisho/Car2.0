@@ -1,13 +1,10 @@
 package org.wit.placemark.console.views
 
-import tornadofx.getValue
-import tornadofx.setValue
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Orientation
 import org.wit.placemark.console.controllers.CarUIController
-//import org.wit.placemark.console.controllers.PlacemarkUIController
 import tornadofx.*
-import kotlin.reflect.KClass
+
 
 class AddCarScreen : View("Add Car") {
     val model = ViewModel()

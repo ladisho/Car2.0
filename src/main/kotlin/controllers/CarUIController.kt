@@ -3,8 +3,6 @@ package org.wit.placemark.console.controllers
 import mu.KotlinLogging
 import org.wit.car.console.models.CarJSONStore
 import org.wit.car.console.models.CarModel
-//import org.wit.placemark.console.models.PlacemarkJSONStore
-//import org.wit.placemark.console.models.PlacemarkModel
 import org.wit.placemark.console.views.*
 import tornadofx.*
 

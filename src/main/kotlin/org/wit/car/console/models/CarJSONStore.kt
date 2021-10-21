@@ -6,7 +6,6 @@ import com.google.gson.reflect.TypeToken
 import mu.KotlinLogging
 
 import org.wit.placemark.console.helpers.*
-import tornadofx.DefaultErrorHandler.Companion.filter
 import java.util.*
 
 private val logger = KotlinLogging.logger {}

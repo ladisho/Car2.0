@@ -3,7 +3,6 @@ package org.wit.placemark.console.views
 import javafx.application.Platform
 import javafx.geometry.Orientation
 import org.wit.placemark.console.controllers.CarUIController
-//import org.wit.placemark.console.controllers.PlacemarkUIController
 import tornadofx.*
 
 class MenuScreen : View("Placemark Main Menu") {
