@@ -11,7 +11,7 @@ import java.util.*
 
 private val logger = KotlinLogging.logger {}
 
-val JSON_FILE = "cars.json"
+val JSON_FILE = "cars1.json"
 val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
 val listType = object : TypeToken<java.util.ArrayList<CarModel>>() {}.type
 
@@ -86,11 +86,21 @@ class CarJSONStore : CarStore {
     private fun deserialize() {
         val jsonString = read(JSON_FILE)
         cars = Gson().fromJson(jsonString, listType)
+        if (cars.size == 0){
+            dummyData()
+        }
     }
 
     override fun delete(car: CarModel) {
         cars.remove(car)
         serialize()
+    }
+
+    fun dummyData(){
+        cars.add(CarModel(0,"123","audi","2000","audi123"))
+        cars.add(CarModel(1,"123","audi","2000","audi123"))
+        cars.add(CarModel(2,"123","audi","2000","audi123"))
+
     }
 }
 
