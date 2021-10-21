@@ -89,7 +89,7 @@ class CarView {
     fun getId(): Long {
         var strId: String? // String to hold user input
         var searchId: Long // Long to hold converted id
-        print("Enter id to Search/Update : ")
+        print("Enter id to Search/Update/Delete : ")
         strId = readLine()!!
         searchId = if (strId.toLongOrNull() != null && !strId.isEmpty())
             strId.toLong()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.wit.car.console.models.CarJSONStoreTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-19T15:10:15" hostname="LAPTOP-5DC0RJ2I" time="0.04">
+<testsuite name="org.wit.car.console.models.CarJSONStoreTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-21T14:56:20" hostname="LAPTOP-5DC0RJ2I" time="0.05">
   <properties/>
-  <testcase name="deleteMain()" classname="org.wit.car.console.models.CarJSONStoreTest" time="0.04"/>
+  <testcase name="deleteMain()" classname="org.wit.car.console.models.CarJSONStoreTest" time="0.05"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
